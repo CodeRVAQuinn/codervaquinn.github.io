@@ -1,0 +1,129 @@
+<doctype !HTML>
+<html>
+<head>
+    <title>CodeRVA Zone</title>
+    <link rel="stylesheet" href="css/jquery.countdown.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+    body > iframe { display: none; }
+
+    #codervaday { width: 90%; height: 35px; }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.plugin.js"></script> 
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="js/dragboxes.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $( ".box" ).draggable({handle: ".windowheader"});
+        });
+    </script>
+    <script>
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+        }
+        $(function () {
+            var periods = $('#codervaday').countdown('getTimes');
+            var countdownTo256 = new Date();
+            if (countdownTo256.getDay() > 0 || countdownTo256.getDay() < 6) {
+	            countdownTo256 = new Date(countdownTo256.getFullYear(), countdownTo256.getMonth(), countdownTo256.getDate(), 14, 56, 00);
+                
+            }
+	        function watchCountdown(periods) { 
+                periods = $('#codervaday').countdown('getTimes');
+            }
+            $('#codervaday').countdown({until: countdownTo256, onTick: watchCountdown, onTick: highlightLast5, onExpire: on});
+            function highlightLast5(periods) { 
+                hours = (periods[4] * 3600);
+                minutes = (periods[5] * 60);
+                seconds = (periods[6]);
+                console.log(hours+minutes+seconds)
+            $('#monitor').text(hours + minutes + seconds);
+            $('#titlebarmonitor').text(String(hours/3600).padStart(2, '0') + ":" + String(minutes/60).padStart(2, '0') + ":" + String(seconds).padStart(2, '0'));
+            $('#monitor2').text((hours + minutes) / 60 );
+                if ($.countdown.periodsToSeconds(periods) === 10) { 
+                    $(this).addClass('highlight'); 
+            }  
+        }      
+        
+    });
+    </script>
+</head>
+<body>
+<script>
+    var snd = new Audio("C:/Users/Student/Documents/crvasc/css/av.wav.mp3");
+    async function delayedGreeting() {
+        document.getElementById("enterbutton").src = "css/boo.gif";
+		$('#bootscreen').addClass('animate');
+        await sleep(4000);
+		snd.play();
+}
+
+    $(function(){
+	$('#enterbutton').on('click',function(){
+        delayedGreeting()
+	});
+});
+
+</script>
+<div class="screen">
+    <audio autoplay>
+        <source src="css/av.wav.mp3" type="audio/mp3">
+    </audio>
+    <div class="startup" id="bootscreen">
+        <img class="logo" id="enterbutton" src="css/boo.png">
+    </div>
+    <div class="windowheader" style="cursor: default; text-align: left; display: flex; justify-content: space-between; padding-left: 5px; padding-right: 5px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+        <h4>CodeRVA Zone</h4>
+        <h4 id="currenttime">12:00 AM</h4>
+    </div>
+    <div class="box countdownbox" id="countbox"">
+    <div class="windowheader"><h4>Countdown Board</h4></div>
+        <div class="timer">
+            <h2>There is currently</h2>
+            <div id="codervaday"></div>
+            <br>
+            <h2>left today</h2>
+            <h2>Only <span style="font-family: 'Chicago'; font-feature-settings: 'tnum', 'onum'; font-weight: 700;" id="monitor2"></span > more minutes<br>and <span style="font-family: 'Chicago'; font-feature-settings: 'tnum', 'onum'; font-weight: 700;" id="monitor"></span> more seconds to go</h2>
+        </div>
+    </div>
+    <div class="box sicktunezbox" id="sicktunez">
+        <div class="windowheader"><h4>Vaporwave Music</h4></div>
+        <div class="aimtextbox" style="height: max-content;">
+            <iframe width="256" height="144" src="https://www.youtube.com/embed/n1WH92zkeqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <script>
+            function clickCountdown() {
+                var x = document.getElementById("countbox");
+                if (x.style.display === 'inline-block') {
+                    x.style.display = 'none';
+                } else {
+                    x.style.display = 'inline-block';
+            }
+        }
+        function clickTunes() {
+                var x = document.getElementById("sicktunez");
+                if (x.style.display === 'inline-block') {
+                    x.style.display = 'none';
+                } else {
+                    x.style.display = 'inline-block';
+            }
+        }
+        </script>
+        <div class="iconmenu">
+        <button class="icon" onclick="clickCountdown()" style="transform: translate(30%, 30%)"> 
+            <img src="css/clock.png">
+            <h5>Countdown<br>Board</h5>
+        </button>
+        <br>
+        <button class="icon" onclick="clickTunes()" style="transform: translate(60%, 90%)"> 
+            <img src="css/tunez.png">
+            <h5>Sick<br>Tunez</h5>
+        </button>
+        </div>
+</div>
+</body>
+</html>
+</doctype>
