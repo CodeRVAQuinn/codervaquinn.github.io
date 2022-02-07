@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "Chicago";
+    src: url("ChiqPro.woff2") format("woff2");
+}
+
+
+
+@font-face {
+    font-family: "Chicago";
+    src: url("ChiqPro-Bold.woff2") format("woff2");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Chicago";
+    src: url("ChiqPro-Black.woff2") format("woff2");
+    font-weight: 800;
+}
+
+
+html {
+    background-color: black;
+}
+
+body {
+    font-family: "Chicago";
+    text-align: center;
+    margin: 0px;
+    font-feature-settings: "tnum", "onum";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    width: 99vw;
+    height: 98vh;
+    border-radius: 8px;
+    background-image: url('macos9.png');
+    image-rendering: pixelated;
+}
+h5, h6 {
+    font-weight: normal;
+    margin: 0px;
+    font-family: "Chicago";
+    font-size: 16px;
+}
+
+h5 {
+    color: white;
+    text-shadow: 2px 2px 0px black;
+}
+.is-countdown{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titlebar {
+    border-bottom: 2px solid black;
+    background-color: #1740d4;
+}
+
+h1 {
+    font-family: "ABC Gravity";
+    font-size: 90px;
+    font-variation-settings: "wdth" 2;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    color: white;
+    text-shadow: 5px 5px 0px black;
+}
+
+@keyframes stretch {
+    from {
+      font-variation-settings: "wdth" 2;
+    }
+    to {
+      font-variation-settings: "wdth" 6;
+    }
+  }
+
+.title1 {
+    animation: stretch 2s 2 alternate cubic-bezier(0.45, 0, 0.55, 1);
+}
+.title2 {
+    animation: stretch 2s 2 alternate cubic-bezier(0.45, 0, 0.55, 1);
+    animation-delay: -0.5s;
+}
+
+.title3 {
+    animation: stretch 2s 2 alternate cubic-bezier(0.45, 0, 0.55, 1);
+    animation-delay: -1s;
+}
+
+@keyframes flash {
+    from {
+        color: red
+    }
+    to {
+        color: black
+    }
+}
+.highlight {
+    color: black;
+    animation: flash 1.01s 10 cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 16px;
+}
+.box {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0px #00000055;
+    position: absolute;
+    top: 60;
+    left: 40;
+}
+.countdownbox {
+    width: 358px;
+    z-index: 16;
+    display: none;
+}
+.aimbox {
+    width: 421px;
+    z-index: 13;
+    display: none;
+    height: 350px;
+}
+.sicktunezbox {
+    width: max-content;
+    z-index: 15;
+    display: none;
+}
+
+h4 {
+    font-weight: bold;
+    margin: 0px;
+    font-size: 16px;
+}
+
+iframe {
+    margin-top: 5px;
+    border: none;
+}
+.icon {
+    cursor: pointer;
+}
+.windowheader {
+    border-bottom: 2px solid black;
+    background-color: #cccccc;
+    border-top: 2px solid white;
+    border-left: 2px solid #dddddd;
+    border-right: 2px solid #aaaaaa;
+    cursor: move;
+}
+
+[draggable=true] {
+    cursor: move;
+}
+
+.aimtextbox {
+    height: 300px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: left;
+    font-size: 16px;
+    padding: 5px;
+}
+
+button {
+    background: none;
+    border: none;
+}
+button.macosbutton {
+    border: 1px solid black;
+    padding: 0px;
+    height: max-content;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+}
+a.macosbutton2 {
+    border-bottom: 2px solid black;
+    background-color: #cccccc;
+    border-top: 2px solid white;
+    border-left: 2px solid #dddddd;
+    border-right: 2px solid #aaaaaa;
+    cursor: pointer;
+    padding: 3px;
+    font-family: "Chicago";
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.iconmenu {
+    float: right;
+    width: 200px;
+    display: fixed;
+}
+
+@keyframes fadout {
+    0%, 75% {
+        opacity: 1;
+        display: fixed;
+        z-index: 999;
+    }
+    99% {
+        opacity: 0;
+        display: fixed;
+        z-index: 999;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        z-index: 0;
+    }
+}
+.startup {
+    position: fixed;
+    background-color: darkblue;
+    width: 99vw;
+    height: 98vh;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    transform-origin: center;
+    transform: translateY(25vh);
+    border: 3px outset black;
+}
+
+.animate {
+    animation: fadout 5s forwards;
+}
