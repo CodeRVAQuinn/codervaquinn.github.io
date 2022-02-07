@@ -1,0 +1,66 @@
+/* jQuery Countdown styles 2.0.0. */
+.countdown-rtl {
+	direction: rtl;
+}
+.countdown-row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+	margin: auto;
+}
+
+.countdown-show1 .countdown-section {
+	width: 98%;
+}
+.countdown-show2 .countdown-section {
+	width: 48%;
+}
+.countdown-show3 .countdown-section {
+	width: 32.5%;
+}
+.countdown-show4 .countdown-section {
+	width: 24.5%;
+}
+.countdown-show5 .countdown-section {
+	width: 19.5%;
+}
+.countdown-show6 .countdown-section {
+	width: 16.25%;
+}
+.countdown-show7 .countdown-section {
+	width: 14%;
+}
+.countdown-section {
+	display: block;
+	float: left;
+	font-size: 16px;
+	text-align: center;
+	font-variation-settings: "wght" 800;
+	font-weight: bold;
+}
+
+@font-face { font-family: 'BaseNine';  src: local('BaseNineC-Bold'), url('https://nomail.com.ua/files/woff/5e68c15e3a829e918cae3e00fb85aa71.woff') format('woff'); }
+@font-face { font-family: 'BaseNineC';  src: local('BaseNineC'), url('https://nomail.com.ua/files/woff/8571ee406a08e882436dfcb8384e9cc4.woff') format('woff'); }
+
+.countdown-amount {
+	font-family: "Chicago";
+	font-size: 32px;
+	font-weight: 800;
+	line-height: 75%;
+}
+.countdown-period {
+	display: block;
+	width: max-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+
+.countdown-descr {
+	display: block;
+	width: 100%;
+	font-weight: bold;
+}
