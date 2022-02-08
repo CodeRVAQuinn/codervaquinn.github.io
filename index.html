@@ -52,7 +52,7 @@
 </head>
 <body>
 <script>
-    var snd = new Audio("css/av.wav.mp3");
+    var snd = new Audio("C:/Users/Student/Documents/crvasc/css/av.wav.mp3");
     async function delayedGreeting() {
         document.getElementById("enterbutton").src = "css/boo.gif";
 		$('#bootscreen').addClass('animate');
@@ -94,6 +94,12 @@
             <iframe width="256" height="144" src="https://www.youtube.com/embed/n1WH92zkeqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
     </div>
+    <div class="box pongbox" id="pong">
+        <div class="windowheader"><h4>Pong</h4></div>
+        <div class="aimtextbox" style="height: max-content;">
+            <iframe width="600" height="450" src="pong.html"></iframe> 
+        </div>
+    </div>
     <script>
             function clickCountdown() {
                 var x = document.getElementById("countbox");
@@ -111,6 +117,14 @@
                     x.style.display = 'inline-block';
             }
         }
+        function clickPong() {
+                var x = document.getElementById("pong");
+                if (x.style.display === 'inline-block') {
+                    x.style.display = 'none';
+                } else {
+                    x.style.display = 'inline-block';
+            }
+        }
         </script>
         <div class="iconmenu">
         <button class="icon" onclick="clickCountdown()" style="transform: translate(30%, 30%)"> 
@@ -121,6 +135,11 @@
         <button class="icon" onclick="clickTunes()" style="transform: translate(60%, 90%)"> 
             <img src="css/tunez.png">
             <h5>Sick<br>Tunez</h5>
+        </button>
+        <br>
+        <button class="icon" onclick="clickPong()" style="transform: translate(60%, 180%)"> 
+            <img src="css/pong.png">
+            <h5>Pong</h5>
         </button>
         </div>
 </div>
