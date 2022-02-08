@@ -134,6 +134,12 @@ h2 {
     display: none;
 }
 
+.pongbox {
+    width: max-content;
+    z-index: 12;
+    display: none;
+}
+
 h4 {
     font-weight: bold;
     margin: 0px;
